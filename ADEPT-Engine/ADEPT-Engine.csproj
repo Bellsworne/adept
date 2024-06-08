@@ -9,8 +9,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="res\" />
+      <Folder Include="res\images\" />
       <Folder Include="src\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="ImGui.NET" Version="1.90.7.1" />
+      <PackageReference Include="Raylib-cs" Version="6.0.0" />
+      <PackageReference Include="rlImgui-cs" Version="2.0.3" />
     </ItemGroup>
 
 </Project>
