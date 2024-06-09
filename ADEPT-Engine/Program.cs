@@ -7,8 +7,8 @@ using rlImGui_cs;
 
 class Program
 {
-    private static int _screenWidth = 900;
-    private static int _screenHeight = 900;
+    private static int _screenWidth = 500;
+    private static int _screenHeight = 500;
     private static string _windowTitle = "ADEPT";
 
     private static string _treeText = "";
@@ -24,19 +24,6 @@ class Program
         _scene = new();
 
         Node node1 = new() { Name = "Node1" };
-        Node node2 = new() { Name = "Node2" };
-        Node node3 = new() { Name = "Node3" };
-        Node node4 = new() { Name = "Node4" };
-        Node node5 = new() { Name = "Node5" };
-        Node node6 = new() { Name = "Node6" };
-        Node node7 = new() { Name = "Node7" };
-        
-        node1.AddChild(node2);
-        node2.AddChild(node3);
-        _scene.Root.AddChild(node4);
-        node4.AddChild(node5);
-        node5.AddChild(node6);
-        _scene.Root.AddChild(node7);
         
         _scene.Root.AddChild(node1);
         
@@ -92,7 +79,9 @@ class Program
         rlImGui.Begin();
         if (ImGui.Begin("Debug window"))
         {
-            ImGui.TextUnformatted(GetFPS().ToString());
+            ImGui.SeparatorText("STATS");
+            ImGui.TextUnformatted("FPS: " + GetFPS());
+            ImGui.SeparatorText("TREE");
             ImGui.TextWrapped(_treeText);
         }
         rlImGui.End();
